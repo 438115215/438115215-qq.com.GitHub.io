@@ -1,0 +1,23 @@
+{
+  "name": "wulishuhan.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "docsify-cli": "^4.4.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wulishuhan/wulishuhan.GitHub.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wulishuhan/wulishuhan.GitHub.io/issues"
+  },
+  "homepage": "https://github.com/wulishuhan/wulishuhan.GitHub.io#readme"
+}
