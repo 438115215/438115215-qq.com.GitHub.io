@@ -112,12 +112,12 @@ public class CustomRequestEntityConverter implements Converter<OAuth2Authorizati
         PrivateKey pKey = generatePrivateKey();
         String token = Jwts.builder()
                 //key-id
-                .setHeaderParam(JwsHeader.KEY_ID, "LZTGDJ323Z")
+                .setHeaderParam(JwsHeader.KEY_ID, "key-id")
                 //team-id
-                .setIssuer("V8793WX47W")
+                .setIssuer("team-id")
                 .setAudience("https://appleid.apple.com")
                 //client-id
-                .setSubject("com.leadiffer.www")
+                .setSubject("client-id")
                 .setExpiration(new Date(System.currentTimeMillis() + (1000 * 60 * 5)))
                 .setIssuedAt(new Date(System.currentTimeMillis()))
                 //jwt use es256
