@@ -2,6 +2,10 @@
 
 ## 前置条件
 
+https://medium.com/tekraze/adding-apple-sign-in-to-spring-boot-app-java-backend-part-e053da331a（参考java的jwt）
+
+https://www.baeldung.com/spring-security-custom-oauth-requests（这篇文章主要是参考springsecurity的oauth2的自定义流程）
+
 ### google邮箱
 
 由于google邮箱可以使用中国号码注册，所以使用tiktok的第三方登录来登录google账号，用以登录tiktok开发者
