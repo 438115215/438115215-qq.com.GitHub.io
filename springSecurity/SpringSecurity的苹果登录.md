@@ -8,7 +8,7 @@
 
 https://medium.com/tekraze/adding-apple-sign-in-to-spring-boot-app-java-backend-part-e053da331a（参考java的jwt）
 
-https://www.baeldung.com/spring-security-custom-oauth-requests（这篇文章主要是参考spring security的oauth2的自定义流程）
+https://www.baeldung.com/spring-security-custom-oauth-requests（这篇文章主要是参考springsecurity的oauth2的自定义流程）
 
 ## 获取clientId、teamId、keyId
 
