@@ -1,5 +1,5 @@
 - javascript
-  - [ES6](es6.md)
+  - [ES6](javascript/es6/es6.md)
 - springSecurity
-  - [SpringSecurity的苹果登录](SpringSecurity的苹果登录.md)
-  - [springSecurity集成tiktok登录](springSecurity集成tiktok登录.md)
+  - [SpringSecurity的苹果登录](springSecurity/SpringSecurity的苹果登录.md)
+  - [springSecurity集成tiktok登录](springSecurity/springSecurity集成tiktok登录.md)
