@@ -66,7 +66,7 @@ spring:
             client-id: 你的client_id
             client-secret: 你的client_secret
             authorization-grant-type: authorization_code
-            redirect-uri: "https://sso.leadiffer.com/login/oauth2/code/tiktok"
+            redirect-uri: "https://域名/login/oauth2/code/tiktok"
             scope:
               - user.info.basic
         provider:
