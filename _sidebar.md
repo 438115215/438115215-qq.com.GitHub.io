@@ -11,3 +11,5 @@
   * [安装](Laser-Web/安装.md)
     * [Windows安装](Laser-Web/Windows安装.md)
   * [初始化配置](Laser-Web/初始化配置.md)
+* MQTT
+  * [MQTT](./MQTT/mqtt.md)
