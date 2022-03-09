@@ -68,7 +68,7 @@ vue ui
 * 非要用，记住v-for的优先级高于v-if
 #### jsx
 vue中使用jsx语法
-```jsx
+```js
 <script>
 const grids = new Array(8).fill(1).map((_, r) => {
   return new Array(8).fill(1).map((_, c) => {
