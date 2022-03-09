@@ -23,7 +23,7 @@ vue ui
 如何在vue中使用命名规则
 ##### 1.cameCase
 * js函数、变量
-  ```
+  ```js
   new Vue({
       el: '#app',
       data() {
