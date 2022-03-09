@@ -25,6 +25,7 @@
   * [控制文件管理](oracle/控制文件管理.md)
   * [日志文件管理设置](oracle/日志文件管理设置.md)
   * [表空间和数据文件管理](oracle/表空间和数据文件管理.md)
+  * [备份与恢复](oracle/备份与恢复.md)
 * Mysql
   * [数据库基础知识](mysql/数据库基础知识.md)
   * [MySQL的基本操作](mysql/MySQL的基本操作.md)
