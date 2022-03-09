@@ -2,6 +2,7 @@
   * [ES6](javascript/es6/es6.md)
   * [vue](javascript/vue/vue源码学习.md)
     * [vue基础](javascript/vue/vue基础.md)
+    * [vue组件](javascript/vue/vue组件.md)
   * [编译模板](javascript/vue/编译模板.md)
 * springSecurity
   * [SpringSecurity的苹果登录](springSecurity/SpringSecurity的苹果登录.md)
