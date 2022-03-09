@@ -86,7 +86,7 @@ ES6 允许按照一定模式，从数组和对象中提取值，对变量进行�
 
 为解构赋值
 
-```
+```js
 const arr = ['张学友', '刘德华', '黎明', '郭富城'];
 let [zhang, liu, li, guo] = arr;
 //对象的解构赋值
@@ -120,7 +120,7 @@ wangfei;
 
 2) 可以使用 ${xxx} 形式输出变量
 
-```
+```js
 // 定义字符串
 let str = `<ul>
  <li>沈腾</li>
@@ -141,7 +141,7 @@ ES6 允许在大括号里面，直接写入变量和函数，作为对象的属�
 
 样的书写更加简洁。
 
-```
+```js
 let name = '尚硅谷';
 let slogon = '永远追求行业更高标准';
 let improve = function () {
@@ -164,7 +164,7 @@ let atguigu = {
 
 ES6 允许使用「箭头」（=>）定义函数。
 
-```
+```js
 /**
 * 1. 通用写法
 */
@@ -187,7 +187,7 @@ let fn = (arg1, arg2, arg3) => {
 
 5) 不能使用 arguments
 
-```
+```js
 /**
 * 2. 省略小括号的情况
 */
@@ -221,7 +221,7 @@ let school = {
 
 ES6 引入 rest 参数，用于获取函数的实参，用来代替 arguments
 
-```
+```js
 /**
 * 作用与 arguments 类似
 */
@@ -244,7 +244,7 @@ minus(100,1,2,3,4,5,19);
 
 扩展运算符（spread）也是三个点（...）。它好比 rest 参数的逆运算，将一个数组转为用逗号分隔的参数序列，对数组进行解包
 
-```
+```js
 /**
 * 展开数组
 */ 
@@ -289,7 +289,7 @@ Symbol 特点
 
 Reflect.ownKeys 来获取对象的所有键名
 
-```
+```js
 //创建 Symbol
 let s1 = Symbol();
 console.log(s1, typeof s1);
@@ -439,7 +439,7 @@ d) 每调用 next 方法返回一个包含 value 和 done 属性的对象
 
 生成器函数是 ES6 提供的一种异步编程解决方案，语法行为与传统函数完全不同
 
-```
+```js
 function * gen(){
  yield '一只没有耳朵';
  yield '一只没有尾巴';
@@ -502,7 +502,7 @@ ES6 提供了新的数据结构 Set（集合）。它类似于数组，但成员
 
 清空集合，返回 undefined
 
-```
+```js
 //创建一个空集合
 let s = new Set();
 //创建一个非空集合
@@ -550,7 +550,7 @@ iterator 接口，所以可以使用『扩展运算符』和『for…of…』进
 
 清空集合，返回 undefined
 
-```
+```js
 //创建一个空 map
 let m = new Map();
 //创建一个非空 map
@@ -595,7 +595,7 @@ ES6 提供了更接近传统语言的写法，引入了 Class（类）这个概�
 
 6) 父类方法可以重写
 
-```
+```js
 //父类
 class Phone {
  //构造方法
@@ -771,7 +771,7 @@ Rest 参数与 spread 扩展运算符在 ES6 中已经引入，不过 ES6 中只
 
 在 ES9 中为对象提供了像数组一样的 rest 参数和扩展运算符
 
-```
+```js
 function connect({host, port, ...user}) {
  console.log(host);
  console.log(port);
@@ -790,7 +790,7 @@ connect({
 
 ES9 允许命名捕获组使用符号『?<name>』,这样获取捕获结果可读性更强
 
-```
+```js
 let str = '<a href="http://www.baidu.com">baidu</a>';
 const reg = /<a href="(?<url>.*)">(?<text>.*)<\/a>/;
 const result = reg.exec(str);
@@ -802,7 +802,7 @@ console.log(result.groups.text);
 
 ES9 支持反向断言，通过对匹配结果前面的内容进行判断，对匹配进行筛选。
 
-```
+```js
 //声明字符串
 let str = 'JS5211314 你知道么 555 啦啦啦';
 //正向断言
@@ -822,7 +822,7 @@ s』改变这种行为，允许行
 
 终止符出现
 
-```
+```js
 let str = `
 <ul>
  <li>
