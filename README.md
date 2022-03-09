@@ -30,6 +30,7 @@
   * [表空间和数据文件管理](oracle/表空间和数据文件管理.md)
   * [备份与恢复](oracle/备份与恢复.md)
   * [rman进行非归档模式的备份与恢复](oracle/rman进行非归档模式的备份与恢复.md)
+  * [闪回技术](oracle/闪回技术.md)
 * Mysql
   * [数据库基础知识](mysql/数据库基础知识.md)
   * [MySQL的基本操作](mysql/MySQL的基本操作.md)
