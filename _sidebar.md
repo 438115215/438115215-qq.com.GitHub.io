@@ -5,6 +5,8 @@
     - [vue组件](javascript/vue/vue组件.md)
     - [部分源码解析](javascript/vue/部分源码解析.md)
     - [编译模板](javascript/vue/编译模板.md)
+  - javascript进阶
+    - [var-let-const的区别](javascript/js%E8%BF%9B%E9%98%B6/../js进阶/var-let-const的区别.md)
 - springSecurity
   - [SpringSecurity的苹果登录](springSecurity/SpringSecurity的苹果登录.md)
   - [springSecurity集成tiktok登录](springSecurity/springSecurity集成tiktok登录.md)
