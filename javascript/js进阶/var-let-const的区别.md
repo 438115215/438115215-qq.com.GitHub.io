@@ -22,6 +22,7 @@ a = 'shuhan111'// 报错
 console.log(a)
 ```
 var 的这一特性，会造成 window 全局变量的污染。
+
 **例子：**
 
 ```js   
@@ -47,6 +48,7 @@ const c = 'shuhan'
 ```
 
 **var 声明不存在块级作用域，let 和 const 声明存在块级作用域**
+
 **例子:**
 ```js
   {
@@ -81,6 +83,7 @@ console.log(c); //报错：Uncaught SyntaxError: Identifier 'c' has already been
 备注：可以看出：使用 let/const 声明的变量，不会造成全局污染。
 
 **let 和 const 的暂时性死区（DTC）**
+
 **例子1（正常）**
 ```js
 const name = 'shuhan';
@@ -92,6 +95,7 @@ function foo() {
 foo(); // 执行函数后，打印结果：shuhan
 ```
 上方例子中， 变量 name 被声明在函数外部，此时函数内部可以直接使用。
+
 **例子2（报错）**
 ```js
 const name = 'shuhan';
@@ -104,6 +108,7 @@ function foo() {
 foo(); // 执行函数后，控制台报错：Uncaught ReferenceError: Cannot access 'name' before initialization
 ```
 代码解释：如果在当前块级作用域中使用了变量 name，并且当前块级作用域中通过 let/const 声明了这个变量，那么，声明语句必须放在使用之前，也就是所谓的 DTC（暂时性死区）。DTC 其实是一种保护机制，可以让我们养成良好的编程习惯。
+
 **const：一旦声明必须赋值；声明后不能再修改**
 ```js
 const a;
@@ -111,9 +116,11 @@ console.log(a); // 报错：Uncaught SyntaxError: Missing initializer in const d
 ```
 
 **总结**
+
 基于上面的种种区别，我们可以知道：var 声明的变量，很容易造成全局污染。以后我们尽量使用 let 和 const 声明变量吧。
 
 **const 常量被修改**
+
 我们知道：用 const 声明的变量无法被修改。但是：
 * 如果用 const 声明基本数据类型，则无法被修改；
 * 如果用 const 声明引用数据类型（即“对象”），这里的“无法被修改”指的是不能改变内存地址的引用；但对象里的内容是可以被修改的。
