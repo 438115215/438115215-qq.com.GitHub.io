@@ -40,5 +40,5 @@
 - webpack
   - [webpack初使用](./webpack/webpack初使用.md)
   - [webpack的开发环境配置](./webpack/webpack的开发环境配置.md)
-  - [webpack的生产环境配置.md](./webpack/webpack的生产环境配置.md)
-  - [webpack的优化环境配置.md](./webpack/webpack的优化环境配置.md)
+  - [webpack的生产环境配置](./webpack/webpack的生产环境配置.md)
+  - [webpack的优化环境配置](./webpack/webpack的优化环境配置.md)
