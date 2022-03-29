@@ -7,20 +7,25 @@
 * node
 * npm
 ## 构建webpack的文件目录
-**1.初始化配置**
+
+**初始化配置**
+
 创建一个webpack-learn1文件夹并进入然后运行命令
 ```node
 npm init
 ```
 会问你各种构建文件的问题，一路回车就行了
-**2.安装webpack和webpack-cli**
+
+**安装webpack和webpack-cli**
+
 在命令行运行,-D 是开发时使用的
 ```node
 npm i -D webpack@4.41.6
 npm i -D webpack-cli@3.3.11
 ```
-**
-**3.创建项目结构**
+
+**创建项目结构**
+
 - 1.在当前项目下创建src文件夹
 - 2.在src文件夹下创建data.json，保存数据
 如：
@@ -45,7 +50,7 @@ html,body {
 }
 ```
 
--5.在命令行运行
+- 5.在命令行运行
 ```node
 webpack ./src/index.js -o ./build/built.js --mode=development
 ```
