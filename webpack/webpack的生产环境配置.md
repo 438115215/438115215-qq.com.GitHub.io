@@ -3,14 +3,23 @@
 ## 提取CSS成单独文件
 
 **项目结构**
---src
-----css
-------a.css
-------b.css
-----js
-------index.js
-----index.html
---webpack.config.js
+
+|--src
+
+|----css
+
+|------a.css
+
+|------b.css
+
+|----js
+
+|------index.js
+
+|----index.html
+
+|--webpack.config.js
+
 
 **a.css**
 ```css
@@ -90,14 +99,21 @@ module.exports = {
 ## css兼容性处理
 
 **项目结构**
---src
-----css
-------a.css
-------b.css
-----js
-------index.js
-----index.html
---webpack.config.js
+|--src
+
+|----css
+
+|------a.css
+
+|------b.css
+
+|----js
+
+|------index.js
+
+|----index.html
+
+|--webpack.config.js
 
 **a.css**
 ```css

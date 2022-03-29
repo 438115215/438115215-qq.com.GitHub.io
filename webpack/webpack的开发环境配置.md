@@ -1,15 +1,24 @@
 # webpack的开发环境配置
 ## webpack的打包样式资源
 **创建项目目录**
+
 创建一个文件夹叫webpack-learn2
 在webpack-learn2下面创建src/index.js、src/index.less、index.css、webpack.config.js
+
 **目录如下**
+
 \- webpack-learn2
+
 \-- src
+
 \--- index.js
+
 \--- index.css
+
 \--- index.less
+
 \-- webpack.config.js
+
 
 **安装loder**
 ```node
@@ -112,17 +121,14 @@ module.exports = {
 ```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>webpack</title>
 </head>
-
 <body>
   <h1 id="title">hello html</h1>
 </body>
-
 </html>
 ```
 
@@ -143,6 +149,7 @@ console.log(add(2, 3));
 ```node
 npm i html-webpack-plugin
 ```
+
 ```js
 /*
   loader: 1. 下载   2. 使用（配置loader）
