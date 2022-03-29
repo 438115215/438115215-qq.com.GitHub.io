@@ -1,14 +1,14 @@
+- [VUE](vue/vue源码学习.md)
+  - [vue基础](vue/vue基础.md)
+  - [vue组件](vue/vue组件.md)
+  - [部分源码解析](vue/部分源码解析.md)
+  - [编译模板](vue/编译模板.md)
 - javascript
   - [ES6](javascript/es6/es6.md)
-  - [vue](javascript/vue/vue源码学习.md)
-    - [vue基础](javascript/vue/vue基础.md)
-    - [vue组件](javascript/vue/vue组件.md)
-    - [部分源码解析](javascript/vue/部分源码解析.md)
-    - [编译模板](javascript/vue/编译模板.md)
-  - javascript进阶
-    - [var-let-const的区别](javascript/js%E8%BF%9B%E9%98%B6/../js进阶/var-let-const的区别.md)
-    - [数据赋值](javascript/js进阶/数据赋值.md)
-    - [对象创建和继承](javascript/js进阶/对象的创建和继承.md)
+- javascript进阶
+  - [var-let-const的区别](javascript/js%E8%BF%9B%E9%98%B6/../js进阶/var-let-const的区别.md)
+  - [数据赋值](javascript/js进阶/数据赋值.md)
+  - [对象创建和继承](javascript/js进阶/对象的创建和继承.md)
 - springSecurity
   - [SpringSecurity的苹果登录](springSecurity/SpringSecurity的苹果登录.md)
   - [springSecurity集成tiktok登录](springSecurity/springSecurity集成tiktok登录.md)
