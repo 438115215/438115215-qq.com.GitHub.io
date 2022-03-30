@@ -9,6 +9,10 @@
   - [var-let-const的区别](javascript/js%E8%BF%9B%E9%98%B6/../js进阶/var-let-const的区别.md)
   - [数据赋值](javascript/js进阶/数据赋值.md)
   - [对象创建和继承](javascript/js进阶/对象的创建和继承.md)
+- JavsScript高级程序设计4
+  - [什么是javascript](./JavaScript高级程序设计4/什么是javascript.md)
+  - [HTML中的JavaScript](./JavaScript高级程序设计4/HTML中的JavaScript.md)
+  - [行内代码与外部文件](./JavaScript高级程序设计4/行内代码与外部文件.md)
 - springSecurity
   - [SpringSecurity的苹果登录](springSecurity/SpringSecurity的苹果登录.md)
   - [springSecurity集成tiktok登录](springSecurity/springSecurity集成tiktok登录.md)
