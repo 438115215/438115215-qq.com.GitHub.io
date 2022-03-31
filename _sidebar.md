@@ -13,6 +13,10 @@
   - [什么是javascript](./JavaScript高级程序设计4/什么是javascript.md)
   - [HTML中的JavaScript](./JavaScript高级程序设计4/HTML中的JavaScript.md)
   - [语言基础](./JavaScript高级程序设计4/语言基础.md)
+    - [语法](./JavaScript高级程序设计4/语言基础/语法.md)
+    - [关键字与保留字](./JavaScript高级程序设计4/语言基础/关键字与保留字.md)
+    - [变量](./JavaScript高级程序设计4/语言基础/变量.md)
+    - [数据类型](./JavaScript高级程序设计4/语言基础/数据类型.md)
 - springSecurity
   - [SpringSecurity的苹果登录](springSecurity/SpringSecurity的苹果登录.md)
   - [springSecurity集成tiktok登录](springSecurity/springSecurity集成tiktok登录.md)
