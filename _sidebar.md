@@ -67,7 +67,7 @@
   - [在windows使用docker环境搭建hyperf微服务](hyperf/在windows使用docker环境搭建hyperf微服务.md)
   - [使用hyperf框架编写一个简单的mvc实例](hyperf/使用hyperf框架编写一个简单的mvc实例.md)
 - ORACLE
-  - [控制文件管理](oracle/控制文件管理.md)
+  - [控制文件管理](oracle/控制文件管理.+md)
   - [日志文件管理设置](oracle/日志文件管理设置.md)
   - [表空间和数据文件管理](oracle/表空间和数据文件管理.md)
   - [备份与恢复](oracle/备份与恢复.md)
