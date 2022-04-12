@@ -50,6 +50,11 @@
       - [switch语句](./JavaScript高级程序设计4/语言基础/语句/switch语句.md)
     - [函数](./JavaScript高级程序设计4/语言基础/函数.md)
     - [小结](./JavaScript高级程序设计4/语言基础/小结.md)
+  - [变量、作用域与内存](./JavaScript高级程序设计4/变量、作用域与内存/变量、作用域与内存.md)
+    - [原始值与引用值](./JavaScript高级程序设计4/变量、作用域与内存/原始值与引用值.md)
+    - [执行上下文与作用域](./JavaScript高级程序设计4/变量、作用域与内存/执行上下文与作用域.md)
+    - [垃圾回收](./JavaScript高级程序设计4/变量、作用域与内存/垃圾回收.md)
+    - [小结](./JavaScript高级程序设计4/变量、作用域与内存/小结.md)
 - springSecurity
   - [SpringSecurity的苹果登录](springSecurity/SpringSecurity的苹果登录.md)
   - [springSecurity集成tiktok登录](springSecurity/springSecurity集成tiktok登录.md)
