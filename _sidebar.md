@@ -56,6 +56,7 @@
     - [垃圾回收](./JavaScript高级程序设计4/变量、作用域与内存/垃圾回收.md)
     - [小结](./JavaScript高级程序设计4/变量、作用域与内存/小结.md)
   - [基本引用类型](./JavaScript高级程序设计4/基本引用类型.md)
+  - [集合引用类型](./JavaScript高级程序设计4/集合引用类型.md)
 - springSecurity
   - [SpringSecurity的苹果登录](springSecurity/SpringSecurity的苹果登录.md)
   - [springSecurity集成tiktok登录](springSecurity/springSecurity集成tiktok登录.md)
