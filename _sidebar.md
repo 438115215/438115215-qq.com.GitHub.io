@@ -3,6 +3,7 @@
   - [vue组件](vue/vue组件.md)
   - [部分源码解析](vue/部分源码解析.md)
   - [编译模板](vue/编译模板.md)
+  - [简单写个miniVue](vue/简单写个miniVue.md)
 - javascript
   - [ES6](javascript/es6/es6.md)
 - javascript进阶
