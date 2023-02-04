@@ -97,6 +97,8 @@
   - [编写一个简单编译器](./编译/编写一个简单编译器.md)
 - Git
   - [git 使用](./git/git使用.md)
+- Nginx
+  - [nginx](./nginx/nginx.md)
 - 遇到的问题
   - [google 浏览器](./遇到的问题/google浏览器.md)
   - [题目](./遇到的问题/题目.md)
