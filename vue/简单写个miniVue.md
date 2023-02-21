@@ -1,4 +1,5 @@
-# 简单写个Vue
+# 简单写个 Vue
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -193,12 +194,12 @@
     </script>
   </body>
 </html>
-
 ```
 
-# 自己编写目标模板mini-vue
+# 自己编写目标模板 mini-vue
 
-## 方法1
+## 方法 1
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -490,9 +491,10 @@
     </script>
   </body>
 </html>
-
 ```
-## 方法2
+
+## 方法 2
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -716,10 +718,9 @@
     </script>
   </body>
 </html>
-
 ```
 
-## 方法3
+## 方法 3
 
 ```html
 <!DOCTYPE html>
@@ -798,5 +799,228 @@
     });
   </script>
 </html>
+```
 
+# 模板引擎实现+建议内置指令
+- className目前还没加上多类名
+- 目前指令只编写了v-model
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+  <script>
+    class vue {
+      constructor(options) {
+        console.log("options", options);
+        this.dep = [];
+        this.options = options;
+        this.reactive(options.data);
+        const vdom = this.parse(options.template);
+        console.log("vdom", vdom);
+        this.render(vdom);
+      }
+      reactive(originData) {
+        const _this = this;
+        const proxyData = new Proxy(originData, {
+          get(data, key, proxy) {
+            console.log("get方法", data, key);
+            return data[key];
+          },
+          set(data, key, newValue, proxy) {
+            console.log("set方法", data, key, newValue);
+            data[key] = newValue;
+            _this.dep.forEach((item) => {
+              item.update();
+            });
+            return true;
+          },
+        });
+        this.data = proxyData;
+      }
+
+      parse(html) {
+        const stack = [];
+        let root = {};
+        for (let i = 0, index = 0; i < html.length; i++) {
+          let char = html[i];
+          if (char == "<") {
+            let tag = "";
+            index = i;
+            while (char != ">") {
+              tag += char;
+              ++i;
+              char = html[i];
+            }
+            let position = [index, i];
+            tag += char;
+
+            if (tag.includes("/")) {
+              let node = stack.pop();
+              node.closeTagPosition = position;
+              node.tagName = this.getTagName(node);
+              node.directives = this.getDirectives(node);
+              node.className = this.getClassName(node);
+              node.text = this.getText(node);
+              if (stack.length == 0) {
+                root = node;
+              }
+            } else {
+              let node = {
+                tagName: "",
+                children: [],
+                props: [],
+                openTagPosition: position,
+              };
+              if (stack.length > 0) {
+                let parent = stack[stack.length - 1];
+                parent.children.push(node);
+              }
+              stack.push(node);
+            }
+          }
+        }
+        return root;
+      }
+
+      getTagName(node) {
+        const template = this.options.template;
+        const tagStr = template.substring(
+          node.openTagPosition[0],
+          node.openTagPosition[1] + 1
+        );
+        const tag = tagStr.split(" ")[0].substring(1).replace(">", "");
+        return tag;
+      }
+
+      getDirectives(node) {
+        const directives = [];
+        const template = this.options.template;
+        const tagStr = template.substring(
+          node.openTagPosition[0],
+          node.openTagPosition[1] + 1
+        );
+        const arr = tagStr.split(" ");
+        for (let i = 0; i < arr.length; i++) {
+          const element = arr[i];
+          if (element.includes("v-")) {
+            let directiveArr = element.split("=");
+            let directive = {
+              name: directiveArr[0],
+              value: directiveArr[1],
+            };
+            directives.push(directive);
+          }
+        }
+        return directives;
+      }
+
+      getClassName(node) {
+        let name = "";
+        const template = this.options.template;
+        const tagStr = template.substring(
+          node.openTagPosition[0],
+          node.openTagPosition[1] + 1
+        );
+        const arr = tagStr.split(" ");
+        for (let i = 0; i < arr.length; i++) {
+          const element = arr[i];
+          if (element.includes("class")) {
+            let classNameArr = element.split("=");
+            name = classNameArr[1];
+            name = name.replaceAll('"', "").replace(">", "");
+          }
+        }
+        return name;
+      }
+
+      getText(node) {
+        const template = this.options.template;
+        let text = template.substring(
+          node.openTagPosition[1] + 1,
+          node.closeTagPosition[0]
+        );
+        const textObj = { text, after: -1, tagName: "text" };
+        for (let i = 0; i < node.children.length; i++) {
+          const child = node.children[i];
+          const childNodeStr = this.options.template.substring(
+            child.openTagPosition[0],
+            child.closeTagPosition[1] + 1
+          );
+          if (text.indexOf(childNodeStr) <= 0) {
+            textObj.after = i;
+          }
+          text = text.replace(childNodeStr, "");
+          textObj.text = text;
+        }
+        if (textObj.text.length > 0) {
+          node.children.splice(textObj.after + 1, 0, textObj);
+        }
+      }
+
+      render(vdom) {
+        const dom = this.getDom(vdom);
+        this.options.el.appendChild(dom);
+      }
+
+      getDom(root) {
+        const node =
+          root.tagName == "text"
+            ? document.createTextNode(root.text)
+            : document.createElement(root.tagName);
+        if (root.tagName != "text" && root.className != "") {
+          node.setAttribute("class", root.className);
+        }
+        if (root.tagName == "text") {
+          const data = root.text.replace(
+            /\{\{\s*(\w+)\s*\}\}/g,
+            (findStr, $1) => {
+              this.dep.push({
+                update: () => {
+                  console.log("调用", this.data[$1]);
+                  node.textContent = this.data[$1];
+                },
+              });
+              return this.data[$1];
+            }
+          );
+          node.textContent = data;
+        }
+        this.eventMount(root, node);
+        for (let i = 0; i < root.children?.length; i++) {
+          const child = root.children[i];
+          node.appendChild(this.getDom(child));
+        }
+        return node;
+      }
+
+      eventMount(node, dom) {
+        for (let i = 0; i < node.directives?.length; i++) {
+          const directive = node.directives[i];
+          const key = directive.value.replaceAll('"', "").replace(">", "");
+          if (directive.name == "v-model") {
+            dom.addEventListener("input", () => {
+              this.data[key] = arguments[1].value;
+            });
+          }
+        }
+      }
+    }
+
+    const app = new vue({
+      el: document.querySelector("#app"),
+      template: `<div class="container"><input class="child-1" type="text" v-model="aa"></input>111<div class="child-2">{{ aa }}</div><p></p></div>`,
+      data: {
+        aa: 1,
+      },
+    });
+  </script>
+</html>
 ```
