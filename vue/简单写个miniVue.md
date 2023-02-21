@@ -803,7 +803,7 @@
 
 # 模板引擎实现+建议内置指令
 
-- 目前指令只编写了 v-model
+- 目前指令只编写了 v-model @click
 - diff 算法未编写
 
 ```html
@@ -824,6 +824,8 @@
         console.log("options", options);
         this.dep = [];
         this.options = options;
+        this.method = options.method;
+        console.log("method", this.method);
         this.reactive(options.data);
         const vdom = this.parse(options.template);
         console.log("vdom", vdom);
@@ -905,10 +907,12 @@
       getDirectives(node) {
         const directives = [];
         const template = this.options.template;
-        const tagStr = template.substring(
+        let tagStr = template.substring(
           node.openTagPosition[0],
           node.openTagPosition[1] + 1
         );
+        console.log(tagStr);
+        tagStr = tagStr.replace(">", "").replace("<", "");
         const arr = tagStr.split(" ");
         for (let i = 0; i < arr.length; i++) {
           const element = arr[i];
@@ -918,6 +922,14 @@
               name: directiveArr[0],
               value: directiveArr[1],
             };
+            directives.push(directive);
+          } else if (element.includes("@")) {
+            let directiveArr = element.split("=");
+            let directive = {
+              name: directiveArr[0],
+              value: directiveArr[1].replaceAll('"', ""),
+            };
+            console.log("element", directive);
             directives.push(directive);
           }
         }
@@ -1010,6 +1022,9 @@
             dom.addEventListener("input", () => {
               this.data[key] = arguments[1].value;
             });
+          } else if (directive.name == "@click") {
+            console.log("tnnd:", this.method[directive.value], directive.value);
+            dom.addEventListener("click", this.method[directive.value]);
           }
         }
       }
@@ -1017,11 +1032,17 @@
 
     const app = new vue({
       el: document.querySelector("#app"),
-      template: `<div class="container"><input class="child-1" type="text" v-model="aa"></input>111<div class="child-2-1 child-2-2">{{ aa }}</div><p></p></div>`,
+      template: `<div class="container"><input class="child-1" type="text" v-model="aa"></input>111<div class="child-2-1 child-2-2">{{ aa }}</div><p @click="cc">bbb</p></div>`,
       data: {
         aa: 1,
+      },
+      method: {
+        cc() {
+          console.log("cc");
+        },
       },
     });
   </script>
 </html>
+
 ```
