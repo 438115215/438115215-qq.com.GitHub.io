@@ -825,11 +825,12 @@
         this.dep = [];
         this.options = options;
         this.method = options.method;
-        console.log("method", this.method);
-        this.reactive(options.data);
+        this.data = this.reactive(options.data);
+        this.options.created();
         const vdom = this.parse(options.template);
         console.log("vdom", vdom);
         this.render(vdom);
+        this.options.mounted();
       }
       reactive(originData) {
         const _this = this;
@@ -843,11 +844,12 @@
             data[key] = newValue;
             _this.dep.forEach((item) => {
               item.update();
+              _this.options.updated();
             });
             return true;
           },
         });
-        this.data = proxyData;
+        return proxyData;
       }
 
       parse(html) {
@@ -1036,6 +1038,15 @@
       data: {
         aa: 1,
       },
+      created() {
+        console.log("created");
+      },
+      mounted() {
+        console.log("mounted");
+      },
+      updated() {
+        console.log("update");
+      },
       method: {
         cc() {
           console.log("cc");
@@ -1044,5 +1055,6 @@
     });
   </script>
 </html>
+
 
 ```
