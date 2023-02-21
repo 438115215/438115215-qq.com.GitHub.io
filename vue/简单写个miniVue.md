@@ -802,8 +802,10 @@
 ```
 
 # 模板引擎实现+建议内置指令
-- className目前还没加上多类名
-- 目前指令只编写了v-model
+
+- 目前指令只编写了 v-model
+- diff 算法未编写
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -929,16 +931,13 @@
           node.openTagPosition[0],
           node.openTagPosition[1] + 1
         );
-        const arr = tagStr.split(" ");
-        for (let i = 0; i < arr.length; i++) {
-          const element = arr[i];
-          if (element.includes("class")) {
-            let classNameArr = element.split("=");
-            name = classNameArr[1];
-            name = name.replaceAll('"', "").replace(">", "");
-          }
+        let classList = tagStr.match(/class=\"[\w\d\s\-]*\"/g);
+        if (classList) {
+          classList = classList[0].split("=")[1];
+          classList = classList.replaceAll('"', "").split(" ");
+          console.log("classList", classList);
         }
-        return name;
+        return classList ? classList : [];
       }
 
       getText(node) {
@@ -975,8 +974,10 @@
           root.tagName == "text"
             ? document.createTextNode(root.text)
             : document.createElement(root.tagName);
-        if (root.tagName != "text" && root.className != "") {
-          node.setAttribute("class", root.className);
+        if (root.tagName != "text" && root.className.length > 0) {
+          for (const classes of root.className) {
+            node.classList.add(classes);
+          }
         }
         if (root.tagName == "text") {
           const data = root.text.replace(
@@ -1016,7 +1017,7 @@
 
     const app = new vue({
       el: document.querySelector("#app"),
-      template: `<div class="container"><input class="child-1" type="text" v-model="aa"></input>111<div class="child-2">{{ aa }}</div><p></p></div>`,
+      template: `<div class="container"><input class="child-1" type="text" v-model="aa"></input>111<div class="child-2-1 child-2-2">{{ aa }}</div><p></p></div>`,
       data: {
         aa: 1,
       },
