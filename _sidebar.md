@@ -62,6 +62,8 @@
 - springSecurity
   - [SpringSecurity 的苹果登录](springSecurity/SpringSecurity的苹果登录.md)
   - [springSecurity 集成 tiktok 登录](springSecurity/springSecurity集成tiktok登录.md)
+- Shopify
+  - [Liquid](Shopify/Liquid.md)
 - LaserWeb
   - [概述](Laser-Web/概述.md)
   - [兼容性](Laser-Web/兼容性.md)

@@ -8,7 +8,7 @@ icon:info 陈舒涵/男/23岁
 icon:school 广东科技学院/信息管理与信息系统/本科/2021年毕业
 
 
-[icon:blog https://shuhan.info](https://shuhan.info)
+[icon:blog https://info.shuhan.tk](https://info.shuhan.tk)
 
 
 [icon:github https://github.com/wulishuhan](https://github.com/wulishuhan)
@@ -20,11 +20,7 @@ icon:school 广东科技学院/信息管理与信息系统/本科/2021年毕业
 
 :::
 
-## 介绍
 
-于2019年开始接触前端，喜欢编码，有Geek精神，对代码有洁癖，喜欢接触前沿技术，爱折腾。
-
-获得数学建模竞省一、三等，蓝桥杯省二等奖
 
 ## 工作
 
@@ -53,20 +49,19 @@ icon:school 广东科技学院/信息管理与信息系统/本科/2021年毕业
 ### 雕刻资源分享网
 `Vue2.0` `Websocket` `Node.JS` `vue-router` `vuex` `elementui` `swiper`
 项目地址：[https://library.ortur.cn](https://library.ortur.cn)
-负责前端项目搭建,后端接口开发
+负责项目搭建、模块化、登陆注册、webpack配置
   
 - 采用axios请求统一处理，搭建api模块，统一处理token
 - 采用vue-router搭建router模块
 - 负责编写后端用户相关接口以及springSecurity第三方登录和第三方（Facebook、tiktok等）接入
 - 采用vue-router进行全局路由守卫完成页面的权限处理和业务抽离
 - 采用nodejs+mockjs+webpack serve搭建前端数据mock。
-- 采用vue-dragable完成了拖动排序
 - 负责负责消息通知中心、用户信息模块、资源详情模块、公共组件、第三方以及登录注册模块的开发和实现
 ### 资源分享网站移动版
 `Vue3.0` `nut-ui` `Node.JS` `vue-router` `vuex` `swiper`
 
 项目地址：[https://m.library.ortur.cn](https://m.library.ortur.cn)
-- 负责前端构建,后端开发
+负责前端项目构建，技术选型，模块化处理，公共组件编写
 - 采用axios请求统一处理，搭建api模块
 - 采用vue-router搭建router模块
 - 负责资源详情模块的开发与实现
@@ -74,7 +69,7 @@ icon:school 广东科技学院/信息管理与信息系统/本科/2021年毕业
 ### Laser Explore App的混合开发
 `JS Briage` `vue2.0` `vuex` `vue-router` `Vant`
 
-- 负责前端项目构建,需求对接
+ 负责前端项目构建,需求对接、UI实现、JSBrige消息通信接口搭建
 - 采用Vant进行页面的基础搭建以及axios请求统一处理
 - 采用vue-router进行全局路由守卫完成导航的title赋值
 - 采用jsbriage 与原生app进行通信，维护统一路由使得vue页面和原生页面对应
@@ -97,4 +92,8 @@ icon:school 广东科技学院/信息管理与信息系统/本科/2021年毕业
 ### 后端相关
 - 了解java，SpringBoot，Mybatis ，Spring，SpringMvc，spring Security等框架的使用
 - 了解maven的使用，了解Mysql、Redis的使用
+## 介绍
 
+于2019年开始接触前端，喜欢编码，有Geek精神，对代码有洁癖，喜欢接触前沿技术，爱折腾。
+
+获得数学建模竞省一、三等，蓝桥杯省二等奖
